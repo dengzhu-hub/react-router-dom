@@ -1,13 +1,363 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+* {
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #fff7ed;
+  font-family: "Inter", sans-serif;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+header {
+  height: 110px;
+  display: flex;
+  align-items: center;
+  padding-block: 10px;
+}
+
+.header-logo {
+}
+.logo {
+  text-decoration: none;
+  font-style: italic;
+  color: #087f5b;
+  font-size: 3rem;
+}
+
+.nav {
+  font-size: 2rem;
+}
+.nav-item {
+  text-transform: uppercase;
+  color: #000;
+  transition: all 0.2s;
+}
+.nav-item:hover {
+  background-color: #f76707;
+  color: #fff;
+  padding: 0.5rem 0.5rem;
+  /* border-radius: 1rem; */
+}
+header .site-logo {
+  color: black;
+  margin-right: auto;
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 3rem;
+}
+
+header a {
+  text-decoration: none;
+  color: #4d4d4d;
+  font-weight: 600;
+  padding: 5px 20px;
+}
+
+header a:hover {
+  color: #161616;
+  /* text-decoration: underline; */
+}
+
+.link-button {
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  padding: 0.75rem 1.375rem;
+  color: initial;
+  font-weight: 700;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.1s ease-in-out;
+}
+
+.link-button:hover {
+  transform: translate(1px, 1px);
+}
+
+/*** HOME PAGE ***/
+.home-container {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.46), rgba(0, 0, 0, 0.46)),
+    url("./assets/shot.jpg") no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  min-height: 350px;
+  color: white;
+  padding: 45px 23px;
+}
+
+.home-container h1 {
+  font-weight: 700;
+  font-size: 2.25rem;
+  line-height: 42px;
+}
+
+.home-container p {
+  line-height: 24px;
+}
+
+.home-container a {
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  background-color: #ff8c38;
+  border: none;
+  width: 100%;
+  margin-top: 27px;
+  padding-block: 0.75rem;
+  color: white;
+  font-weight: 700;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.1s ease-in-out;
+}
+
+.home-container a:hover {
+  transform: translate(1px, 1px);
+}
+
+/*** ABOUT PAGE ***/
+.about-hero-image {
+  max-width: 100%;
+  width: 960px;
+  padding-left: 96px;
+  margin: 0 auto;
+}
+
+.about-page-content {
+  padding-inline: 23px;
+  color: #161616;
+  margin-bottom: 55px;
+}
+
+.about-page-content h1 {
+  line-height: 38px;
+}
+
+.about-page-content p {
+  line-height: 22px;
+}
+
+.about-page-cta {
+  background-color: #ffcc8d;
+  color: #161616;
+  padding-inline: 32px;
+  padding-bottom: 32px;
+  margin-inline: 27px;
+  border-radius: 5px;
+}
+
+.about-page-cta h2 {
+  margin: 0;
+  padding-block: 37px;
+}
+
+.about-page-cta .link-button {
+  background-color: #161616;
+  color: white;
+  border-radius: 10px;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffc078;
+}
+.vans-title {
+  font-size: 3rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #087f5b;
+  font-style: italic;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+}
+
+.vans-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+  padding: 2.4rem 3.2rem;
+}
+.vans-card--box {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 3rem;
+  place-items: center;
+}
+/* // vanItem  */
+
+.van-item-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.8rem;
+  margin-bottom: 1rem;
+}
+.van-item-image {
+  flex: 1;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.van-item-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.van-item-info {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  /* gap: 2.2rem; */
+  padding-left: 1rem;
+}
+.van-item-info h2 {
+  margin-bottom: 0.8rem;
+}
+.van-item-info p {
+  margin-bottom: 1.2rem;
+}
+.van-item-price {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+.van-item-price-label {
+  font-weight: bold;
+  margin-right: 0.5rem;
+  color: #888;
+}
+.van-item-price-value {
+  font-weight: bold;
+  color: #888;
+}
+.van-item-cta {
+  display: flex;
+  width: 80%;
+  text-decoration: none;
+  margin-top: 1.2rem;
+  border-radius: 10px;
+  /* padding: 1.2rem 1.4rem; */
+  background-color: #f76707;
+}
+
+.van-item-cta.link-button:hover {
+  background-color: #087f5b;
+  color: white;
+  border-radius: 10px;
+}
+
+/* // van-details  */
+
+.van-details--container {
+  display: flex;
+  gap: 3rem;
+  padding: 1.2rem 2.4rem;
+  background-color: #ffcc8d;
+}
+
+.van-img {
+  flex: 1;
+  width: 48rem;
+  height: 48rem;
+  border-radius: 11px;
+  overflow: hidden;
+}
+.van-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.van-top {
+  display: flex;
+  justify-content: space-between;
+  background-color: #087f5b;
+}
+.previous-box {
+  display: flex;
+  gap: 1.2rem;
+  text-decoration: none;
+  padding: 1.2rem 2.4rem;
+  /* background-color: #ffcc8d; */
+  border-radius: 11px;
+  align-items: center;
+  justify-content: space-between;
+}
+.previous-box span {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #161616;
+}
+
+.previous {
+  width: 2.4rem;
+  height: 2.4rem;
+  object-fit: cover;
+}
+
+.details-info {
+  flex: 1;
+  border-left: 2px solid #087f5b;
+  padding-left: 2.4rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.details-info h2 {
+  font-size: 2.4rem;
+  text-align: center;
+  color: #000;
+  font-weight: 700;
+  font-style: italic;
+  margin-bottom: 1.2rem;
+}
+
+.details-info p {
+  font-size: 1.8rem;
+  font-weight: normal;
+  color: #087f5b;
+}
+.van-price {
+  font-size: 2.4rem;
+  font-style: italic;
+  font-family: "Roboto", sans-serif;
+  color: #ff8c38;
+}
+.van-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 3rem;
+}
+
+.van-btn {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  padding: 1.2rem 1.4rem;
+  background-color: #087f5b;
+  color: white;
+  border-radius: 10px;
+  text-decoration: none;
+}
+
+.van-btn:hover {
+  background-color: #ff8c38;
+  color: white;
+  border-radius: 10px;
 }
