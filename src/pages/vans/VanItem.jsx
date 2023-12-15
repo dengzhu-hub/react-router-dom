@@ -6,6 +6,10 @@ const VanItem = ({ van }) => {
       <div className="van-item-container">
         <div className="van-item-image">
           <img src={van.imageUrl} alt={van.name} />
+          <div className="overlay">
+            <p>{van.name}</p>
+          
+          </div>
         </div>
         <div className="van-item-info">
           <h2>{van.name}</h2>

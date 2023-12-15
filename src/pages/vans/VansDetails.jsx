@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import previous from "../assets/previous.png";
+import previous from "../../assets/previous.png";
 const VansDetails = () => {
   const { id } = useParams();
   const [van, setVan] = useState();
@@ -22,13 +22,12 @@ const VansDetails = () => {
 
   return (
     <article>
-     <div className="van-top">
-    
-     <Link className="previous-box" to="/vans">
-        <img className="previous"  src={previous} alt="" />
-        <span>Back to vans</span>
-      </Link>
-     </div>
+      <div className="van-top">
+        <Link className="previous-box" to="/vans">
+          <img className="previous" src={previous} alt="" />
+          <span>Back to vans</span>
+        </Link>
+      </div>
       <div className="van-details--container">
         <div className="van-img">
           <img className="img" src={van?.imageUrl} alt="" />

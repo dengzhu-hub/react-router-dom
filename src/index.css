@@ -38,12 +38,12 @@ header {
 .nav {
   font-size: 2rem;
 }
-.nav-item {
+a {
   text-transform: uppercase;
   color: #000;
   transition: all 0.2s;
 }
-.nav-item:hover {
+a:hover {
   background-color: #f76707;
   color: #fff;
   padding: 0.5rem 0.5rem;
@@ -213,11 +213,42 @@ header a:hover {
   height: 200px;
   border-radius: 50%;
   overflow: hidden;
+  position: relative;
+}
+.van-item-image:hover .overlay {
+  opacity: 1;
+}
+.van-item-image:hover .van-item-image img {
+  filter: blur(2px);
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  transition: all 0.2s;
+  font-size: 2rem;
+  opacity: 0;
 }
 .van-item-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+.van-item-image img,
+.overlay {
+  transition: all 0.9s;
+}
+
+.overlay-hostvans {
+  color: red;
 }
 .van-item-info {
   flex: 1 1 0;
@@ -360,4 +391,291 @@ header a:hover {
   background-color: #ff8c38;
   color: white;
   border-radius: 10px;
+}
+
+/* footer  */
+
+.footer {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background-color: #161616;
+  padding: 1.2rem 2.4rem;
+}
+.footer p {
+  color: #fff;
+  font-size: 1.8rem;
+}
+.footer strong {
+  color: #087f5b;
+  font-size: 1.4rem;
+}
+
+.color-link {
+  color: red;
+}
+
+/* hostvans 0 */
+.vans-item {
+  display: flex;
+  background-color: #fff;
+  margin-bottom: 1.2rem;
+  border-radius: 11px;
+  gap: 2.4rem;
+  cursor: pointer;
+  padding: 1.2rem 2.4rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 水平偏移量、垂直偏移量、模糊半径和阴影颜色 */
+  transition: box-shadow 0.3s ease; /* 添加过渡效果，使阴影变化更平滑 */
+}
+.vans-item:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+.vans-img {
+  width: 12rem;
+  height: 12rem;
+  border-radius: 11px;
+  overflow: hidden;
+  position: relative;
+}
+.vans-img:hover.overlay {
+  opacity: 1;
+}
+
+.vans-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(80%);
+  transition: all 0.2s;
+}
+.vans-img img:hover {
+  filter: grayscale(0%);
+}
+.vans-info {
+  display: flex;
+  flex-direction: column;
+  /* gap: 1.2rem; */
+  padding-left: 1.2rem;
+}
+.vans-info h3 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #161616;
+}
+.vans-info p {
+  font-size: 1.4rem;
+  color: #f76707;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.host-vans-title {
+  font-size: 2.4rem;
+  text-transform: capitalize;
+  font-weight: 700;
+  background-image: linear-gradient(to right, #ff922b, #f76707);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  font-style: italic;
+  font-family: "Roboto", sans-serif;
+  margin-bottom: 2.4rem;
+  padding-left: 2.4rem;
+}
+
+.host-vans-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+  padding: 2.4rem 3.2rem;
+}
+.van-link {
+  text-decoration: none;
+}
+.host-vans-item {
+  display: flex;
+  background-color: #fff;
+  margin-bottom: 1.2rem;
+}
+
+/* loading  */
+.loading {
+  font-size: 24px; /* 字体大小 */
+  color: #333; /* 文本颜色 */
+  text-align: center; /* 文本居中 */
+  margin-top: 50px; /* 顶部边距，根据需要调整 */
+}
+
+/* 添加动画效果 */
+@keyframes pulse {
+  0% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.4;
+  }
+}
+
+.loading::after {
+  content: "";
+  display: block;
+  width: 30px; /* 加载动画的宽度 */
+  height: 30px; /* 加载动画的高度 */
+  margin: 20px auto; /* 调整加载动画位置 */
+  border-radius: 50%;
+  border: 4px solid #333; /* 加载动画的颜色 */
+  animation: pulse 1.5s ease-in-out infinite; /* 应用动画效果 */
+}
+
+/* details  */
+
+.detail-back {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+  margin-bottom: 2.4rem;
+}
+.detail-back img {
+  width: 2.4rem;
+  height: 2.4rem;
+  object-fit: cover;
+}
+.detail-back span {
+  color: #087f5b;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+.detail-container {
+  display: flex;
+  /* background-color: #ffc078; */
+  max-width: 48rem;
+  margin-left: 2.4rem;
+  border-radius: 1.6rem;
+  padding: 1.2rem 3.2rem;
+  background-color: #ffc078;
+  flex-direction: column;
+  margin-bottom: 6rem;
+}
+.detail-top {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+
+  /* background-color: #ffc078; */
+
+  gap: 1.2rem;
+}
+.detail-img {
+  width: 13.2rem;
+  height: 13.2rem;
+  border-radius: 11px;
+  overflow: hidden;
+}
+.detail-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.detail-info {
+  display: flex;
+  flex-direction: column;
+  /* gap: 1.2rem; */
+  /* padding-left: 1.2rem; */
+}
+.detail-btn {
+  display: flex;
+  align-items: center;
+  align-self: self-start;
+  justify-content: center;
+  /* gap: 1.2rem; */
+  padding: 0.4rem 0.6rem;
+  background-color: #087f5b;
+  color: white;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 1.8rem;
+}
+.detail-text {
+  font-size: 1.8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+}
+.detail-info h2 {
+  /* font-size: 2.4rem; */
+}
+
+.detail-nav {
+  display: flex;
+  gap: 2.4rem;
+  margin-top: 2.4rem;
+  padding: 1.2rem 2.4rem;
+}
+.detail-nav a {
+  font-size: 1.4rem;
+  text-decoration: none;
+  color: #777;
+}
+
+/* hostvanphoto  */
+
+.photo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.figure-img {
+  width: 22rem;
+  height: 22rem;
+  overflow: hidden;
+  border-radius: 1.1rem;
+  filter: grayscale(80%);
+  opacity: 0.3;
+}
+.figure-img:hover {
+  filter: grayscale(0%);
+  opacity: 1;
+}
+.figure-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.price {
+  font-size: 2.4rem;
+  font-weight: bold;
+  font-style: italic;
+  color: #c92a2a;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.info-box {
+  display: flex;
+  flex-direction: column;
+  box-shadow:  0 4px 8px rgba(0, 0, 0, 0.26);
+  border-radius: 1.1rem;
+  padding: 1.1rem 1.2rem;
+
+}
+.info-box .desc {
+  font-size: 1.3rem;
+  font-weight: normal;
+  line-height: 1.7;
+  font-style: italic;
+  border: 2px dashed #c92a2a;
+  padding: 1.1rem;
+  color: #777;
+}
+.info-box .desc strong {
+  font-weight: bold;
+  color: #000;
 }
